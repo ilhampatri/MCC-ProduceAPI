@@ -35,7 +35,8 @@ namespace Client.Controllers
 
             if (token == null)
             {
-                return RedirectToAction("index", "Home");
+                TempData["message"] = jwtToken.message;
+                return RedirectToAction("index", "Login");
             }
 
             HttpContext.Session.SetString("JWToken", token);
@@ -48,6 +49,21 @@ namespace Client.Controllers
         {
             HttpContext.Session.Clear();
             return RedirectToAction("index", "Home");
+        }
+        [HttpGet("notfound/")]
+        public IActionResult notfound()
+        {
+            return View("404");
+        }
+        [HttpGet("unauthorized/")]
+        public IActionResult unauthorized()
+        {
+            return View("401");
+        }
+        [HttpGet("forbidden/")]
+        public IActionResult forbidden()
+        {
+            return View("403");
         }
     }
 }

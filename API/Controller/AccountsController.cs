@@ -41,11 +41,11 @@ namespace API.Controller
                 var result = accountRepository.LoginPage(loginVM);
                 if (result == 1)
                 {
-                    return BadRequest(new { status = HttpStatusCode.BadRequest, result, message = "Data not Found" });
+                    return BadRequest(new JWTtokenVM { status = HttpStatusCode.BadRequest, tokenId = null, message = "Data not Found" });
                 }
                 else if (result == 2)
                 {
-                    return BadRequest(new { status = HttpStatusCode.BadRequest, result, message = " Wrong Password  " });
+                    return BadRequest(new JWTtokenVM { status = HttpStatusCode.BadRequest, tokenId = null, message = " Wrong Password  " });
 
                 }
                 else if (result == 3)

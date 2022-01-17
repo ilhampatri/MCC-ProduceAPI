@@ -90,7 +90,15 @@ namespace Client
                 var response = context.HttpContext.Response;
                 if (response.StatusCode == (int)HttpStatusCode.Unauthorized)
                 {
-                    response.Redirect("/Login");
+                    response.Redirect("/unauthorized");
+                }
+                else if (response.StatusCode == (int)HttpStatusCode.NotFound)
+                {
+                    response.Redirect("/notfound");
+                }
+                else if (response.StatusCode == (int)HttpStatusCode.Forbidden)
+                {
+                    response.Redirect("/forbidden");
                 }
             });
 
