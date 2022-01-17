@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+   
+
+</body>
+</html>
+
+
+<script>
+    $.ajax({
+        url: "https://localhost:44362/API/Employees/Register",
+        success: function (result) {
+            console.log(result);
+        }
+    })
+
+
+</script>
