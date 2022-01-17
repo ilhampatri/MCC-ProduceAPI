@@ -142,8 +142,6 @@ namespace API.Repository.Data
                              University = universities.UniversityName
                          };
             return result;
-
-
         }
 
         public RegisteredVM GetRegisteredByNIK(string nik)
