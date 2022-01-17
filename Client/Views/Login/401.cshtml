@@ -24,12 +24,30 @@
                     You don't have permission to access this page!
                 </div>
                 <div class="error-actions">
-                    <a href="http://www.jquery2dotnet.com" class="btn btn-primary btn-lg">
-                        <span class="glyphicon glyphicon-home"></span>
-                        Go Login
-                    </a><a href="http://www.jquery2dotnet.com" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-envelope"></span> Contact Support </a>
+                    <p>Redirecet in <span id="timer"></span></p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<script>
+    // Set the date we're counting down to
+    var second = 5;
+
+    // Update the count down every 1 second
+    var setTimer = setInterval(function () {
+        if (second <= 0) {
+            document.getElementById("timer").innerHTML = 0;
+        }
+        else if (second > 0) {
+            document.getElementById("timer").innerHTML = second - 1;
+        }
+        second -= 1;
+    }, 1000);
+    setTimeout(function () {
+        window.location.href = "/Login";
+    },second * 1000);
+    //window.location.href = "/Login";
+</script>
